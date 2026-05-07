@@ -1,0 +1,279 @@
+/* 
+   NEXUS ALPHA | UNIFIED SYSTEM STYLES
+   Main Color Palette: 
+   --primary: Cyan (General UI)
+   --bright-blue: Blue (Key/Action)
+   --bright-red: Red (Staff/DevOps)
+*/
+
+:root {
+    --primary: #00f2ff;
+    --secondary: #7000ff;
+    --bright-blue: #0070ff;
+    --bright-red: #ff0033;
+    --bg-deep: #050505;
+    --card-glass: rgba(255, 255, 255, 0.03);
+    --border-glass: rgba(255, 255, 255, 0.1);
+    --modal-bg: rgba(10, 10, 15, 0.98);
+}
+
+/* Base Reset */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    background: var(--bg-deep); 
+    color: #fff; 
+    font-family: 'Inter', sans-serif; 
+    overflow-x: hidden;
+}
+
+/* Background Visuals */
+.glow-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% -20%, #1a1a2e 0%, #050505 80%);
+    z-index: -1;
+}
+
+/* Navigation */
+.navbar { 
+    padding: 1.5rem 0; 
+    border-bottom: 1px solid var(--border-glass);
+    backdrop-filter: blur(15px);
+    position: sticky; 
+    top: 0; 
+    z-index: 100;
+}
+
+.container { 
+    display: flex; 
+    justify-content: space-between; 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: auto; 
+    align-items: center; 
+}
+
+.logo { 
+    font-family: 'Orbitron'; 
+    font-weight: 700; 
+    letter-spacing: 3px; 
+    font-size: 1.4rem; 
+    cursor: pointer; 
+}
+
+.logo span { color: var(--primary); }
+
+.nav-links { 
+    display: flex; 
+    gap: 2rem; 
+    list-style: none; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: #aaa; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+/* Hero Section */
+.hero { 
+    height: 60vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+}
+
+.hero h1 { 
+    font-size: clamp(2rem, 5vw, 3.5rem); 
+    font-family: 'Orbitron'; 
+    margin-bottom: 1rem; 
+}
+
+.accent { 
+    color: var(--primary); 
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.4); 
+}
+
+/* Status Bar Ticker */
+.status-bar { 
+    background: rgba(255,255,255,0.02); 
+    border-block: 1px solid var(--border-glass); 
+    padding: 15px 0; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+.status-bar:hover { background: rgba(0, 242, 255, 0.05); }
+
+.ticker-wrap { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.ticker-item { 
+    font-size: 0.75rem; 
+    font-weight: 600; 
+}
+
+.dot { 
+    height: 8px; 
+    width: 8px; 
+    border-radius: 50%; 
+    display: inline-block; 
+    margin-right: 5px; 
+}
+
+.green { background: #00ff88; box-shadow: 0 0 10px #00ff88; }
+.yellow { background: #ffcc00; box-shadow: 0 0 10px #ffcc00; }
+
+/* Modal Architecture */
+.overlay {
+    position: fixed; 
+    top: 0; left: 0; 
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); 
+    backdrop-filter: blur(10px);
+    display: none; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000;
+}
+
+.modal {
+    background: var(--modal-bg); 
+    border: 1px solid var(--border-glass);
+    padding: 40px; 
+    border-radius: 10px; 
+    text-align: center;
+    width: 90%; 
+    max-width: 400px; 
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.modal h2 { 
+    font-family: 'Orbitron'; 
+    color: var(--primary); 
+    margin-bottom: 10px; 
+    letter-spacing: 2px; 
+}
+
+/* Specialized Staff Cards (Red Theme) */
+.staff-card {
+    background: rgba(255, 0, 51, 0.05);
+    border: 1px solid rgba(255, 0, 51, 0.2);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    text-align: left;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.staff-card:hover { 
+    background: rgba(255, 0, 51, 0.1); 
+    border-color: var(--bright-red);
+    box-shadow: 0 0 15px rgba(255, 0, 51, 0.3);
+}
+
+.staff-card span { 
+    display: block; 
+    font-size: 0.7rem; 
+    color: #ff6666; 
+    text-transform: uppercase; 
+}
+
+.staff-card b { 
+    font-family: 'Orbitron'; 
+    font-size: 1.1rem; 
+    color: var(--bright-red); 
+    text-shadow: 0 0 10px rgba(255, 0, 51, 0.5); 
+}
+
+/* Forms & Buttons */
+.auth-input {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-glass);
+    padding: 12px;
+    color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.btn-submit {
+    background: var(--primary); 
+    color: #000; 
+    border: none;
+    padding: 12px; 
+    font-family: 'Orbitron'; 
+    font-weight: 700;
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+.btn-submit:hover { opacity: 0.9; box-shadow: 0 0 20px var(--primary); }
+
+.btn-key {
+    background: var(--bright-blue); 
+    color: #fff; 
+    padding: 15px 30px; 
+    font-family: 'Orbitron'; 
+    font-weight: 700;
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+/* Content Cards */
+.dashboard { 
+    padding: 60px 5%; 
+    max-width: 1200px; 
+    margin: auto; 
+}
+
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; 
+}
+
+.glass-card {
+    background: var(--card-glass); 
+    border: 1px solid var(--border-glass);
+    padding: 2rem; 
+    border-radius: 15px; 
+    transition: 0.3s; 
+    cursor: pointer;
+}
+
+.glass-card:hover { 
+    border-color: var(--primary); 
+    transform: translateY(-5px); 
+}
+
+.close-btn {
+    background: transparent; 
+    color: #666; 
+    border: none;
+    margin-top: 15px; 
+    cursor: pointer; 
+    font-size: 0.8rem; 
+    text-transform: uppercase;
+}
